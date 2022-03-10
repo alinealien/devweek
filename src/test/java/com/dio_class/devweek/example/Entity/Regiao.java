@@ -1,0 +1,4 @@
+package com.dio_class.devweek.example.Entity;
+
+public class Regiao {
+}
