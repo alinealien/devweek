@@ -1,17 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Regiao } from '../model/regiao';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegiaoService {
-  
-  //MOC / INTEGRAÇÃO
-  constructor() {}
 
-   listRegioes() : Regiao[]{
-     return [
-       {id: 1, regiao:'Norte', total_exames:1234}
-     ];
-   }
-   }
+  constructor(
+    private http: HttpClient,
+  ) { }
+
+  listRegiao(): Observable<Regiao[]> {
+    //const url = '/assets/regiao.json';
+    const url ="/api/regioes"
+    return this.http.get<Regiao[]>(url);
+  }
+
+}
