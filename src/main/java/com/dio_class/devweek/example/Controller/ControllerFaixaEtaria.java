@@ -1,13 +1,12 @@
         package com.dio_class.devweek.example.Controller;
-
         import com.dio_class.devweek.example.Entity.FaixaEtaria;
-        import com.dio_class.devweek.example.Entity.Regiao;
+        //import com.dio_class.devweek.example.Entity.Regiao;
         import com.dio_class.devweek.example.Repository.FaixaEtariaRepo;
         import org.springframework.http.HttpStatus;
         import org.springframework.http.ResponseEntity;
         import org.springframework.web.bind.annotation.*;
 
-        import java.sql.SQLException;
+        //import java.sql.SQLException;
         import java.util.List;
         import java.util.Optional;
 
