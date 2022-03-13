@@ -15,9 +15,11 @@ export class RegiaoService {
     ) { }
 
     listRegioes(): Observable<Regiao[]>{
-      const url = 'http://localhost:8080'; //caminho definido no spring
-      //const url = './assets/regioes.json';
+      const url = './api/regioes';
       return this.http.get<Regiao[]>(url);
+      //const url = 'http://localhost:8080'; //caminho definido no spring
+      //const url = './assets/regioes.json';
+      
   
     }
   }

@@ -6,18 +6,19 @@ import { FaixaetariaService } from '../service/faixaetaria.service';
 import { OcorrenciaService } from '../service/ocorrencia.service';
 import { RegiaoService } from '../service/regiao.service';
 
-
-
 @Component({
   selector: 'app-exames',
   templateUrl: './exames.component.html',
   styleUrls: ['./exames.component.css']
 })
+
+
 export class ExamesComponent implements OnInit {
 
   ocorrencia_exame: Ocorrencia[] = [];
   regioes: Regiao[] = [];
   faixaetarias: Faixaetaria[] = [];
+  
 
   constructor(
     private ocorrenciaService: OcorrenciaService,
@@ -27,9 +28,8 @@ export class ExamesComponent implements OnInit {
 
   ngOnInit(): void {
     this.regioesService.listRegioes().subscribe(regioes => {this.regioes = regioes});
-    this.ocorrencia_exame = this.ocorrenciaService.listOcorrencias();
-    this.faixaetarias = this.faixaEtariaService.listFaixaEtaria();
-
+    this.ocorrenciaService.listOcorrencias().subscribe(ocorrencia_exame => {this.ocorrencia_exame = ocorrencia_exame});
+    this.faixaEtariaService.listFaixaEtaria().subscribe(faixaetarias => {this.faixaetarias = faixaetarias});
   }
 
 }
