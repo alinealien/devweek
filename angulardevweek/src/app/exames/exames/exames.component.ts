@@ -23,13 +23,20 @@ export class ExamesComponent implements OnInit {
   constructor(
     private ocorrenciaService: OcorrenciaService,
     private regioesService: RegiaoService,
-    private faixaEtariaService: FaixaetariaService
+    private faixaetariaService: FaixaetariaService
   ) { }
 
   ngOnInit(): void {
+    
     this.regioesService.listRegioes().subscribe(regioes => {this.regioes = regioes});
+    
     this.ocorrenciaService.listOcorrencias().subscribe(ocorrencia_exame => {this.ocorrencia_exame = ocorrencia_exame});
-    this.faixaEtariaService.listFaixaEtaria().subscribe(faixaetarias => {this.faixaetarias = faixaetarias});
+    
+   this.faixaetariaService.listFaixaEtaria().subscribe(faixaetarias => {this.faixaetarias = faixaetarias});
+    
+   
+  
   }
+  
 
 }

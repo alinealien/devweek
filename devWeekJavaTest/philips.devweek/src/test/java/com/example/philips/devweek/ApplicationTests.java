@@ -1,7 +1,5 @@
-package com.dio_class.devweek;
+package com.example.philips.devweek;
 
-import com.dio_class.devweek.example.Entity.Regiao;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -16,19 +14,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
-
-import com.dio_class.devweek.example.Controller.ControllerRegiao;
-import org.junit.jupiter.api.Test;
-import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
-
-
-
 @SpringBootTest
 @AutoConfigureMockMvc
-class DevweekApplicationTests {
+class ApplicationTests {
 
 	private final String URL = "/api/regioes";
 
@@ -52,6 +40,8 @@ class DevweekApplicationTests {
 				.andExpect(status().isOk()
 				);
 	}
+
+	/*
 	@Test
 	public void addNewRegiaoTest() throws Exception {
 		Long id = Long.valueOf(6);
@@ -77,6 +67,5 @@ class DevweekApplicationTests {
 			return new ObjectMapper().writeValueAsString(obj);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
-		}
+		}*/
 	}
-}

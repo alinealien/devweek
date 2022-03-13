@@ -1,10 +1,11 @@
-package com.dio_class.devweek.example.Entity;
+package com.example.philips.devweek;
+
 import javax.persistence.*;
 
 @Entity
 public class Regiao {
-
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false, updatable = false)
     private Long id;
     private String regiao;
@@ -42,6 +43,4 @@ public class Regiao {
     public void setTotal(Integer total) {
         this.total_exames = total;
     }
-
-
 }
